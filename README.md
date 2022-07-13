@@ -47,7 +47,7 @@
 ##  paymentsテーブル
 | Column             | Type       | Options     |
 | ------------------ | ------     | ----------- |
-| order_id           | references | null: false,foreign_key: true |
+| order           | references | null: false,foreign_key: true |
 | postcode           | string     | null: false |
 | prefecture_id      | integer    | null: false |
 | city               | string     | null: false |
