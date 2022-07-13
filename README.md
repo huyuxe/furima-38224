@@ -4,7 +4,7 @@
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false,unique: true |
 | email              | string | null: false,unique: true |
-| password           | string | null: false,unique: true |
+| encrypted_password | string | null: false,unique: true |
 | last_name          | string | null: false |
 | first_name         | string | null: false |
 | last_name_kana     | string | null: false |
@@ -21,11 +21,11 @@
 | user               | references | null: false,foreign_key: true |
 | name               | string     | null: false |
 | description        | text       | null: false |
-| category           | integer    | null: false |
-| item_status        | integer    | null: false |
-| shipping_cost      | integer    | null: false |
-| prefecture         | integer    | null: false |
-| shipping_days      | integer    | null: false |
+| category_id        | integer    | null: false |
+| item_status_id     | integer    | null: false |
+| shipping_cost_id   | integer    | null: false |
+| prefecture_id      | integer    | null: false |
+| shipping_days_id   | integer    | null: false |
 | price              | integer    | null: false |
 
 ### Association
@@ -36,7 +36,7 @@
 | Column             | Type       | Options     |
 | ------------------ | ------     | ----------- |
 | user               | references | null: false,foreign_key: true |
-| item               | string     | null: false,foreign_key: true |
+| item               | references | null: false,foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -47,9 +47,9 @@
 ##  paymentsテーブル
 | Column             | Type       | Options     |
 | ------------------ | ------     | ----------- |
-| orders             | references | null: false,foreign_key: true |
+| order_id           | references | null: false,foreign_key: true |
 | postcode           | string     | null: false |
-| prefecture         | integer    | null: false |
+| prefecture_id      | integer    | null: false |
 | city               | string     | null: false |
 | block              | string     | null: false |
 | building           | string     |             |
