@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
       it 'カテゴリーの情報が「---」だと登録できない' do
         @item.category_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 0")
+        expect(@item.errors.full_messages).to include('Category must be other than 0')
       end
 
       it '商品状態が空だと登録できない' do
@@ -58,7 +58,7 @@ RSpec.describe Item, type: :model do
       it '商品状態が「---」だと登録できない' do
         @item.item_status_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item status must be other than 0")
+        expect(@item.errors.full_messages).to include('Item status must be other than 0')
       end
 
       it '配送料について空だと登録できない' do
@@ -70,7 +70,7 @@ RSpec.describe Item, type: :model do
       it '配送料について「---」だと登録できない' do
         @item.transport_cost_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Transport cost must be other than 0")
+        expect(@item.errors.full_messages).to include('Transport cost must be other than 0')
       end
 
       it '発送元が空だと登録できない' do
@@ -82,7 +82,7 @@ RSpec.describe Item, type: :model do
       it '発送元が「---」だと登録できない' do
         @item.prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 0')
       end
 
       it '発送日数が空だと登録できない' do
@@ -94,27 +94,26 @@ RSpec.describe Item, type: :model do
       it '発送日数が「---」だと登録できない' do
         @item.transport_day_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Transport day must be other than 0")
+        expect(@item.errors.full_messages).to include('Transport day must be other than 0')
       end
 
       it '価格が空だと登録できない' do
         @item.price = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank", "Price is not a number")
+        expect(@item.errors.full_messages).to include("Price can't be blank", 'Price is not a number')
       end
 
       it '価格が300円未満だと出品できない' do
         @item.price = 100
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
       it '価格が9,999,999円を超えると出品できない' do
-        @item.price = 100000000
+        @item.price = 100_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
     end
-
   end
 end
