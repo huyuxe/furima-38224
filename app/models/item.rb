@@ -3,7 +3,9 @@ class Item < ApplicationRecord
 
   # テーブルとのアソシエーション
   belongs_to :user
-  has_one :order
+  
+  #後に実装
+  #has_one :order
 
   # アクティブハッシュとのアソシエーション
   belongs_to :category
@@ -24,7 +26,7 @@ class Item < ApplicationRecord
     validates :transport_cost_id
     validates :prefecture_id
     validates :transport_day_id
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
   # 選択が「--」の時は保存不可

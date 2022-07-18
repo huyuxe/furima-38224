@@ -122,6 +122,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
 
+      it '価格が整数以外では登録できない' do
+        @item.price = 1000.5
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price must be an integer')
+      end
+
     end
   end
 end
