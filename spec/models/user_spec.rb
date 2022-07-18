@@ -75,7 +75,7 @@ RSpec.describe User, type: :model do
         @user.password = '123ＡＢＣ'
         @user.password_confirmation = '123ＡＢＣ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
+        expect(@user.errors.full_messages).to include('Password Include both letters and numbers')
       end
       it 'emaiは@を含まないと登録できない' do
         @user.email = 'testmail'
