@@ -13,11 +13,10 @@ RSpec.describe Item, type: :model do
     end
 
     context '商品の出品登録ができないとき' do
-
       it 'ユーザーではないときは登録できない' do
         @item.user_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
 
       it '商品画像がないと登録できない' do
@@ -111,7 +110,7 @@ RSpec.describe Item, type: :model do
       end
 
       it '価格が9,999,999円を超えると登録できない' do
-        @item.price = 100000000
+        @item.price = 100_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
@@ -127,7 +126,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be an integer')
       end
-
     end
   end
 end
