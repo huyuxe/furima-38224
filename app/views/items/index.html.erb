@@ -121,9 +121,9 @@
 
     <% @items.each do |item| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to item_path(item) do %>
         <div class='item-img-content'>
-          <%= image_tag item.image.variant(gravity: :center, resize: '500x500', crop:"500x500+0+0").processed, class: "item-img" if item.image.attached? %>
+          <%= image_tag item.image.variant(resize: '500x500').processed, class: "item-img" if item.image.attached? %>
 
           <div class='sold-out'>
             <span>Sold Out!!</span>
