@@ -3,9 +3,9 @@ class Item < ApplicationRecord
 
   # テーブルとのアソシエーション
   belongs_to :user
-  
-  #後に実装
-  #has_one :order
+
+  # 後に実装
+  # has_one :order
 
   # アクティブハッシュとのアソシエーション
   belongs_to :category

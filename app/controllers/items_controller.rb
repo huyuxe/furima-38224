@@ -18,10 +18,7 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-
   end
-
-
 
   private
 
@@ -30,7 +27,7 @@ class ItemsController < ApplicationController
                                  :transport_day_id, :price).merge(user_id: current_user.id)
   end
 
-  #def set_item
-    #@item = Item.find(params[:id])
-  #end
+  # def set_item
+  # @item = Item.find(params[:id])
+  # end
 end
