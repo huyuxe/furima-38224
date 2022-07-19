@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -39,6 +38,7 @@ class ItemsController < ApplicationController
       render 'edit'
     end
   end
+
   private
 
   def item_params
