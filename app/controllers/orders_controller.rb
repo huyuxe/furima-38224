@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
 
   def index
     @order_form = OrderForm.new
-    redirect_to root_path if non_purchased_item
   end
 
   def create

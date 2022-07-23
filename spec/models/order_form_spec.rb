@@ -33,7 +33,7 @@ RSpec.describe OrderForm, type: :model do
       it '郵便番号が空だと注文できない' do
         @order_form.postcode = nil
         @order_form.valid?
-        expect(@order_form.errors.full_messages).to include("Postcode can't be blank", 'Postcode is invalid. Include hyphen(-)')
+        expect(@order_form.errors.full_messages).to include("Postcode can't be blank")
       end
       it '郵便番号にハイフンがないと注文できない' do
         @order_form.postcode = 1_234_567
