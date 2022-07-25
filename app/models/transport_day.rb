@@ -3,7 +3,7 @@ class TransportDay < ActiveHash::Base
     { id: 0, name: '---' },
     { id: 1, name: '１〜２日で発送' },
     { id: 2, name: '２〜３日で発送' },
-    { id: 3, name: '４〜７で発送' }
+    { id: 3, name: '４〜７日で発送' }
   ]
 
   include ActiveHash::Associations
